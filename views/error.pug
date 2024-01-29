@@ -1,0 +1,13 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        title= title
+        link(href='/overview.css', rel='stylesheet')
+    body 
+        .error-handle-container
+            .error-handle
+                h1.error-handle-heading Something went wrong!
+                p.error-handle-paragraph= msg
+                a.error-handle-go-back-link(href='/') Go back

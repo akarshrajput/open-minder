@@ -1,0 +1,70 @@
+extends base
+block content 
+    .account-body-container
+      .account-user-intro
+        .account-user-intro-padding
+          p.open-minder-quote Open Minder : Beyond Boundaries
+          p.account-user-intro-padding-headline User Account
+          .account-user-intro-padding-flex
+            p.account-user-intro-padding-data= user.name
+            p.account-user-intro-padding-data= user.email
+          .account-user-intro-padding-flex
+            p.account-user-intro-padding-data Articles: 46
+            p.account-user-intro-padding-data Views: 1903
+          .account-user-intro-padding-flex
+      .account-setting-container
+        .account-container
+          a.account-container-link.account-setting-button(href="#") Settings
+          a.account-container-link.account-password-button(href="#") Password
+          a.account-container-link.account-articles-button(href="#") Articles
+          a.account-container-link(href="#") Liked
+          a.account-container-link(href="#") Saved
+          a.account-container-link(href="#") Features
+          a.account-container-link(href="#") Docs
+          a.account-container-link(href="#") Reports
+          a.account-container-link.special-account-color.account-logout-button(href="#") Logout
+        .account-setting-data
+          .account-main-data
+            p.account-data-headline Settings 
+            form.account-data-form.account-data-simple
+              div
+                img.account-setting-image(src=`/img/users/${user.photo}`,alt='User Photo')
+                input.account-data-form-photo(type='file',accept='image/*',id='photo',name='photo')
+                label.account-data-form-photo-label(for='photo') Change photo
+              div
+                label Name
+                input.account-data-form-name(type='text',id='name',value=`${user.name}`)
+              div
+                label Email
+                input.account-data-form-email(type='text',id='email',value=`${user.email}`)
+              div
+                label Bio
+                textarea.account-data-form-bio(rows=4,id='bio')= user.bio
+              div
+                button.submit-account-form.account-data-submit Save
+          .account-articles-data 
+          .account-password-data 
+            p.account-data-headline Password Change
+            form.account-data-form.account-data-password
+              div
+                label Current Password
+                input.account-data-form-current-password(placeholder='********',id='currentPassword', type='password')
+              div
+                label New Password
+                input.account-data-form-new-password(placeholder='********',id='newPassword', type='password')
+              div
+                label Confirm Password
+                input.account-data-form-confirm-password(placeholder='********',id='confirmPassword', type='password')
+              button.submit-account-form.account-password-submit Save
+    footer.footer.footer-fixed
+        nav.footer-nav-link-container
+            ul
+                li: a(href='#').footer-link-item Help
+                li: a(href='#').footer-link-item Status
+                li: a(href='#').footer-link-item About
+                li: a(href='#').footer-link-item Careers
+                li: a(href='#').footer-link-item Blog
+                li: a(href='#').footer-link-item Privacy
+                li: a(href='#').footer-link-item Terms
+                li: a(href='#').footer-link-item Text to speech 
+    script(src='/js/bundle.js')

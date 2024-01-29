@@ -1,0 +1,38 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(href='/overview.css' rel='stylesheet')
+  title= title 
+  //- link(rel='icon', href='/img/favicon.png', type='image/x-icon')
+  link(rel='shortcut icon', href='/img/favicon.png', type='image/x-icon')
+  link(rel='preconnect' href='https://fonts.googleapis.com')
+  link(rel='preconnect' href='https://fonts.gstatic.com' crossorigin='')
+  link(href='https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Raleway:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Rethink+Sans:ital,wght@0,400;0,500;0,600;0,700;0,800;1,400;1,500;1,600;1,700;1,800&family=Roboto+Slab:wght@100;200;300;400;500;600;700;800;900&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Lora:wght@400;500&family=Edu+TAS+Beginner:wght@600&display=swap' rel='stylesheet')
+header.header
+  .main-header-container
+      a.main-img-container(href='/')
+        //- p.main-logo Minder
+        img.main-img(src='/img/open-minder.png')
+      .main-search-container
+        svg.main-search-logo(xmlns='http://www.w3.org/2000/svg' viewbox='0 0 256 256')
+          path(d='M228.24,219.76l-51.38-51.38a86.15,86.15,0,1,0-8.48,8.48l51.38,51.38a6,6,0,0,0,8.48-8.48ZM38,112a74,74,0,1,1,74,74A74.09,74.09,0,0,1,38,112Z')
+        input.main-search(type='text' name='main-search' placeholder='Search')
+  .main-website-logo 
+    p 
+  if user
+    .user-header-info-container
+      a.secondary-link-item.secondary-link-item-hover(href=`/write/${user.id}`)
+            svg.write-logo(xmlns='http://www.w3.org/2000/svg' width='24' height='24' fill='#000000' viewbox='0 0 256 256')
+              path(d='M224.49,76.2,179.8,31.51a12,12,0,0,0-17,0L133.17,61.17h0L39.52,154.83A11.9,11.9,0,0,0,36,163.31V208a12,12,0,0,0,12,12H92.69a12,12,0,0,0,8.48-3.51L224.48,93.17a12,12,0,0,0,0-17Zm-129,134.63A4,4,0,0,1,92.69,212H48a4,4,0,0,1-4-4V163.31a4,4,0,0,1,1.17-2.83L136,69.65,186.34,120ZM218.83,87.51,192,114.34,141.66,64l26.82-26.83a4,4,0,0,1,5.66,0l44.69,44.68a4,4,0,0,1,0,5.66Z')
+            p Write
+      a(href='/me')
+        img.user-header-image(src=`/img/users/${user.photo}`)
+  else
+    .secondary-header-container
+      ul.secondary-link-container
+        li
+          a.secondary-link-item.special-secondary-link-item(href='/signup') Sign up
+        li
+          a.secondary-link-item.secondary-link-item-hover(href='/login') Sign In
+script(src='/js/bundle.js')

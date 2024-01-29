@@ -1,0 +1,82 @@
+extends base
+block content
+    .write-blog-tools 
+        p Tools 
+        button.write-blog-tools-button Heading
+        button.write-blog-tools-button Paragraph
+        button.write-blog-tools-button Link
+        button.write-blog-tools-button Image
+        button.write-blog-tools-button List
+    .write-blog-container
+        .write-heading
+            .write-content-input-heading-container
+                p.write-content-input-heading Title
+                p.write-content-input-heading-detail Maxlength - 80, Maxlength - 50
+            textarea.common-write-input.write-input-heading.write-blog-input-heading(type='text',rows='2')
+        .write-description
+            .write-content-input-heading-container
+                p.write-content-input-heading Description
+                p.write-content-input-heading-detail Maxlength - 60, Maxlength - 300
+            textarea.common-write-input.write-input-description.write-blog-input-description(type='text',rows='4')
+        .write-information 
+            .write-category
+                label(for='common-write-input') Category:
+                select.common-write-input.write-blog-input-category(name='common-write-input')
+                    option(value='') Select
+                    option(value='Artificial Intelligence') Artificial Intelligence
+                    option(value='Agriculture') Agriculture
+                    option(value='Book') Book
+                    option(value='Career') Career
+                    option(value='Celebrity') Celebrity
+                    option(value='Coding') Coding
+                    option(value='Creativity') Creativity
+                    option(value='Cultural') Cultural
+                    option(value='Discoveries') Discoveries
+                    option(value='Education') Education
+                    option(value='Environment') Environment
+                    option(value='Entrepreneurship') Entrepreneurship
+                    option(value='Fashion') Fashion
+                    option(value='Finance') Finance
+                    option(value='Fitness') Fitness
+                    option(value='Food') Food
+                    option(value='Health') Health
+                    option(value='History') History
+                    option(value='Hacks') Hacks
+                    option(value='Home') Home
+                    option(value='Inspirational') Inspirational
+                    option(value='Meditation') Meditation
+                    option(value='Motivational') Motivational
+                    option(value='Movie') Movie
+                    option(value='Music') Music
+                    option(value='Parenting') Parenting
+                    option(value='Personal Growth') Personal Growth
+                    option(value='Photography') Photography
+                    option(value='Politics') Politics
+                    option(value='Productivity') Productivity
+                    option(value='Programming') Programming
+                    option(value='Psychology') Psychology
+                    option(value='Relationships') Relationships
+                    option(value='Review') Review
+                    option(value='Science') Science
+                    option(value='Self-Care') Self-Care
+                    option(value='Social') Social
+                    option(value='Social Media') Social Media
+                    option(value='Space') Space
+                    option(value='Sports') Sports
+                    option(value='Strategies') Strategies
+                    option(value='Technology') Technology
+                    option(value='Tips') Tips
+                    option(value='Training') Training
+                    option(value='Travel') Travel
+                    option(value='Wildlife') Wildlife
+            .write-tags
+                input.common-write-input.write-blog-input-tags(type='text' placeholder='tags')
+        .write-featuredIn-image 
+            label(for='featuredImage') Featured Image: 
+            input.common-write-input(style='width:fit-content;',type="file", name='featuredImage')
+        .write-content-input-heading-container
+            p.write-content-input-heading Content
+            p.write-content-input-heading-detail Hint - Press Enter for a new line to start a new paragraph.
+        textarea.write-content.write-blog-input-content
+        button.save-write-content-button POST
+    script(src='/js/bundle.js')
