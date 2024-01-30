@@ -15,12 +15,19 @@ exports.getOverview = catchAsync(async (req, res) => {
     url: "http://127.0.0.1:8000/api/v1/blogs?sort=-createdAt&limit=20",
   });
   const secondComp = responseTwo.data.data.blogs;
+
+  const responseThree = await axios({
+    method: "GET",
+    url: "http://127.0.0.1:8000/api/v1/blogs?categories=Book",
+  });
+  const thirdComp = responseThree.data.data.blogs;
   // 2) Build Template
   // 3) Render that template using tour data from 1).
   res.status(200).render("overview", {
     title: "Open Minder : Beyond Boundaries",
     firstComp,
     secondComp,
+    thirdComp,
   });
   // console.log(blogs);
 });
