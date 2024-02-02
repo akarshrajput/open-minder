@@ -6,14 +6,14 @@ const blogSchema = new mongoose.Schema(
       type: String,
       required: [true, "Blog must have heading"],
       trim: true,
-      minlength: [40, "A blog title must have more than 40 characters"],
-      maxlength: [80, "A blog title must have less than 80 characters"],
+      minlength: [10, "A blog title must have more than 10 characters"],
+      maxlength: [100, "A blog title must have less than 80 characters"],
     },
     description: {
       type: String,
       required: [true, "Blog must have description"],
       trim: true,
-      minlength: [60, "A blog description must have more than 60 characters"],
+      minlength: [20, "A blog description must have more than 60 characters"],
       maxlength: [300, "A blog description must have less than 300 characters"],
     },
     featuredImage: {
@@ -23,8 +23,8 @@ const blogSchema = new mongoose.Schema(
     content: {
       type: String,
       required: [true, "Blog must have a Content"],
-      minlength: [100, "Content must have more than 100 characters"],
-      maxlength: [1500, "Content must have less than 1500 characters"],
+      minlength: [2, "Content must have somethng written."],
+      maxlength: [20000, "Content must have less than 20,000 characters"],
     },
     author: {
       type: mongoose.Schema.ObjectId,

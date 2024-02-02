@@ -924,6 +924,15 @@ a {
   display: flex;
   align-items: center;
 }
+.trending-home-header-story {
+  display: flex;
+  font-size: 1.4rem;
+  font-weight: 500;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  /* margin-bottom: 2rem; */
+}
 /* Footer */
 .footer {
   border-top: 1px solid #4950571c;

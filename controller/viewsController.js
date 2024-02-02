@@ -18,16 +18,44 @@ exports.getOverview = catchAsync(async (req, res) => {
 
   const responseThree = await axios({
     method: "GET",
-    url: "http://127.0.0.1:8000/api/v1/blogs?categories=Book",
+    url: "http://127.0.0.1:8000/api/v1/blogs?sort=-views&categories=Book&limit=4",
   });
-  const thirdComp = responseThree.data.data.blogs;
+  const story = responseThree.data.data.blogs;
+
+  const responseFour = await axios({
+    method: "GET",
+    url: "http://127.0.0.1:8000/api/v1/blogs?sort=-views&categories=Health&limit=4",
+  });
+  const health = responseFour.data.data.blogs;
+
+  const responseFive = await axios({
+    method: "GET",
+    url: "http://127.0.0.1:8000/api/v1/blogs?sort=-views&categories=Space&limit=4",
+  });
+  const space = responseFive.data.data.blogs;
+
+  const responseSix = await axios({
+    method: "GET",
+    url: "http://127.0.0.1:8000/api/v1/blogs?sort=-views&categories=Coding&limit=4",
+  });
+  const coding = responseSix.data.data.blogs;
+
+  const responseSeven = await axios({
+    method: "GET",
+    url: "http://127.0.0.1:8000/api/v1/blogs?sort=-views&categories=Education&limit=4",
+  });
+  const education = responseSeven.data.data.blogs;
   // 2) Build Template
   // 3) Render that template using tour data from 1).
   res.status(200).render("overview", {
     title: "Open Minder : Beyond Boundaries",
     firstComp,
     secondComp,
-    thirdComp,
+    story,
+    health,
+    space,
+    coding,
+    education,
   });
   // console.log(blogs);
 });
